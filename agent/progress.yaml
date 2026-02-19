@@ -238,6 +238,22 @@ progress:
 recent_work:
   - date: 2026-02-19
     description: |
+      Deployed task-mcp-server with updated dependencies to Cloud Run.
+      Updated to @prmichaelsen/task-mcp v1.1.0 and deployed successfully.
+    items:
+      - ✅ Updated @prmichaelsen/task-mcp to v1.1.0
+      - ✅ Type check passed
+      - ✅ Build completed successfully
+      - ✅ Deployed to Cloud Run (Build ID: 014d43a9-59c9-4ecf-a16d-cb68b3015f8d)
+      - ✅ Build completed in 76 seconds
+      - ✅ Commit SHA: 374c9b0
+      - ✅ Health check verified: {"status":"healthy"}
+      - ✅ Service status: READY
+      - ✅ New revision: task-mcp-server-00002-hgm
+      - ✅ Deployment successful
+
+  - date: 2026-02-19
+    description: |
       Updated task documentation to reflect actual architecture implementation.
       Corrected all references to match JWT auth, factory pattern, and SSE transport.
     items:
