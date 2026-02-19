@@ -1,0 +1,317 @@
+# Project Progress Tracking
+
+project:
+  name: task-mcp-server
+  version: 0.1.0
+  started: 2026-02-16
+  status: not_started
+  current_milestone: M1
+  description: |
+    Deployment wrapper for @prmichaelsen/task-mcp MCP server.
+    Provides Docker configuration, Cloud Run setup, and deployment automation.
+
+milestones:
+  - id: M1
+    name: Project Setup and Bootstrap
+    status: not_started
+    progress: 0
+    started: null
+    completed: null
+    estimated_weeks: 0.1
+    tasks_completed: 0
+    tasks_total: 5
+    notes: |
+      Initialize project structure, dependencies, and configuration.
+      Following bootstrap pattern from remember-mcp-server.
+
+  - id: M2
+    name: Server Implementation
+    status: not_started
+    progress: 0
+    started: null
+    completed: null
+    estimated_weeks: 0.15
+    tasks_completed: 0
+    tasks_total: 3
+    notes: |
+      Implement MCP server with mcp-auth wrapper and task-mcp integration.
+      Simpler than remember-mcp-server (no custom JWT auth needed).
+
+  - id: M3
+    name: Deployment Configuration
+    status: not_started
+    progress: 0
+    started: null
+    completed: null
+    estimated_weeks: 0.1
+    tasks_completed: 0
+    tasks_total: 3
+    notes: |
+      Create Docker container and Cloud Build configuration.
+      Prepare for Cloud Run deployment.
+
+  - id: M4
+    name: Production Deployment
+    status: not_started
+    progress: 0
+    started: null
+    completed: null
+    estimated_weeks: 0.1
+    tasks_completed: 0
+    tasks_total: 3
+    notes: |
+      Deploy to Cloud Run and verify production operation.
+      Complete documentation and testing.
+
+tasks:
+  milestone_1:
+    - id: task-1
+      name: Initialize Node.js Project
+      status: not_started
+      file: agent/tasks/task-1-initialize-nodejs.md
+      estimated_hours: 0.5
+      completed_date: null
+      notes: |
+        Create package.json with dependencies and install packages
+
+    - id: task-2
+      name: Create TypeScript Configuration
+      status: not_started
+      file: agent/tasks/task-2-typescript-config.md
+      estimated_hours: 0.25
+      completed_date: null
+      notes: |
+        Create tsconfig.json for ES2022 modules
+
+    - id: task-3
+      name: Create Project Structure
+      status: not_started
+      file: agent/tasks/task-3-project-structure.md
+      estimated_hours: 0.25
+      completed_date: null
+      notes: |
+        Create src/ directory and skeleton files
+
+    - id: task-4
+      name: Create Configuration Files
+      status: not_started
+      file: agent/tasks/task-4-configuration-files.md
+      estimated_hours: 0.5
+      completed_date: null
+      notes: |
+        Create .gitignore, .dockerignore, .env.example
+
+    - id: task-5
+      name: Create README Documentation
+      status: not_started
+      file: agent/tasks/task-5-readme-documentation.md
+      estimated_hours: 0.75
+      completed_date: null
+      notes: |
+        Create comprehensive README with setup and deployment instructions
+
+  milestone_2:
+    - id: task-6
+      name: Implement Main Server
+      status: not_started
+      file: agent/tasks/task-6-main-server.md
+      estimated_hours: 2
+      completed_date: null
+      notes: |
+        Implement src/index.ts with mcp-auth wrapper and task-mcp integration
+
+    - id: task-7
+      name: Add Health Check Endpoint
+      status: not_started
+      file: agent/tasks/task-7-health-check.md
+      estimated_hours: 0.25
+      completed_date: null
+      notes: |
+        Verify health check endpoint provided by mcp-auth
+
+    - id: task-8
+      name: Integrate task-mcp Base Server
+      status: not_started
+      file: agent/tasks/task-8-integrate-base.md
+      estimated_hours: 1
+      completed_date: null
+      notes: |
+        Verify task-mcp integration and per-user isolation
+
+  milestone_3:
+    - id: task-9
+      name: Create Dockerfile
+      status: not_started
+      file: agent/tasks/task-9-dockerfile.md
+      estimated_hours: 1
+      completed_date: null
+      notes: |
+        Create multi-stage Dockerfile with health check
+
+    - id: task-10
+      name: Create Cloud Build Configuration
+      status: not_started
+      file: agent/tasks/task-10-cloudbuild.md
+      estimated_hours: 0.75
+      completed_date: null
+      notes: |
+        Create cloudbuild.yaml for automated deployments
+
+    - id: task-11
+      name: Test Docker Locally
+      status: not_started
+      file: agent/tasks/task-11-test-docker.md
+      estimated_hours: 0.5
+      completed_date: null
+      notes: |
+        Build and test Docker container locally
+
+  milestone_4:
+    - id: task-12
+      name: Deploy to Cloud Run
+      status: not_started
+      file: agent/tasks/task-12-deploy-cloudrun.md
+      estimated_hours: 1
+      completed_date: null
+      notes: |
+        Deploy to Cloud Run using Cloud Build
+
+    - id: task-13
+      name: Production Testing
+      status: not_started
+      file: agent/tasks/task-13-production-testing.md
+      estimated_hours: 1
+      completed_date: null
+      notes: |
+        Verify production deployment and test functionality
+
+    - id: task-14
+      name: Complete Documentation
+      status: not_started
+      file: agent/tasks/task-14-documentation.md
+      estimated_hours: 1
+      completed_date: null
+      notes: |
+        Finalize all documentation and update progress tracking
+
+documentation:
+  design_documents: 1
+  milestone_documents: 4
+  pattern_documents: 0
+  task_documents: 14
+  last_updated: 2026-02-19
+
+progress:
+  planning: 100
+  implementation: 0
+  testing: 0
+  documentation: 50
+  overall: 0
+
+recent_work:
+  - date: 2026-02-19
+    description: |
+      Restructured project roadmap based on remember-mcp-server.
+      Expanded from 1 task to 4 milestones with 14 tasks.
+    items:
+      - ✅ Created 4 milestone documents (M1-M4)
+      - ✅ Created 14 task documents (task-1 through task-14)
+      - ✅ Updated progress.yaml with new structure
+      - ✅ Removed old single-task structure
+      - 📋 Ready to begin implementation with Task 1
+
+  - date: 2026-02-19
+    description: |
+      Agent context initialization completed via @acp.init command.
+      Full context loaded, documentation reviewed, ready to proceed with Task 1.
+    items:
+      - ✅ Checked for ACP updates (v2.1.4 available - current v1.4.3)
+      - ✅ Read all agent documentation (4 files: progress.yaml, requirements.md, milestone-1, task-1)
+      - ✅ Reviewed project structure (README.md, AGENT.md, agent/ directory)
+      - ✅ Verified no source files exist yet (deployment files to be created)
+      - ✅ Documentation is current and accurate
+      - ✅ Ready to begin Task 1: Deployment Setup
+      - ⚠️  ACP update available (v2.1.4) - includes package management and critical directives
+  
+  - date: 2026-02-18
+    description: |
+      Agent context initialization completed via @acp.init command.
+      Full context loaded, documentation reviewed, ready to proceed.
+    items:
+      - ✅ Checked for ACP updates (v1.4.3 - up to date)
+      - ✅ Read all agent documentation (4 files)
+      - ✅ Reviewed project structure (no source files yet)
+      - ✅ Verified documentation is current and accurate
+      - ✅ Ready to begin Task 1: Deployment Setup
+  
+  - date: 2026-02-16
+    description: |
+      Agent context initialization completed.
+      Reviewed all documentation and source files.
+    items:
+      - ✅ Checked for ACP updates (v1.4.3 - up to date)
+      - ✅ Read all agent documentation (progress.yaml, requirements.md, milestone, task)
+      - ✅ Reviewed README.md and project structure
+      - ✅ Verified documentation is current
+      - ✅ Project ready for Task 1 implementation
+  
+  - date: 2026-02-16
+    description: |
+      Initialized ACP structure for task-mcp-server project.
+      Created requirements and milestone documents.
+    items:
+      - ✅ Created AGENT.md
+      - ✅ Created agent/design/requirements.md
+      - ✅ Created agent/milestones/milestone-1-deployment-configuration.md
+      - ✅ Created agent/progress.yaml
+      - ✅ Created task-1-deployment-setup.md
+
+next_steps:
+  - Begin Milestone 1: Project Setup
+  - Start with Task 1: Initialize Node.js Project
+  - Follow task documents in sequence
+  - Update progress.yaml after each task completion
+
+notes:
+  - Uses @prmichaelsen/task-mcp v0.4.0+ library
+  - Deploys to Google Cloud Run
+  - Integrates with mcp-auth wrapper
+  - Separate from core library
+  - Structure based on remember-mcp-server (4 milestones, 14 tasks)
+  - Simpler than remember-mcp-server (no custom JWT auth)
+
+current_blockers: []
+
+team:
+  - role: Lead Developer
+    name: Agent
+    focus: |
+      Ready to begin Task 1: Initialize Node.js Project
+
+dependencies:
+  external_services:
+    - name: Google Cloud Run
+      status: pending
+      notes: |
+        Deployment target for MCP server
+    
+    - name: Firebase/Firestore
+      status: available
+      notes: |
+        Accessed via @prmichaelsen/task-mcp library
+  
+  libraries:
+    - name: "@prmichaelsen/task-mcp"
+      version: "^0.4.0"
+      purpose: |
+        MCP server library
+    
+    - name: "@prmichaelsen/mcp-auth"
+      version: "^7.0.3"
+      purpose: |
+        Authentication wrapper for MCP server
+
+quality:
+  test_coverage: 0
+  code_review_status: pending
+  documentation_status: in_progress
