@@ -49,3 +49,4 @@ coverage/
 # Firebase
 firebase-debug.log
 .firebase/
+service-account.json
