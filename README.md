@@ -10,10 +10,11 @@ task-mcp-server handles the deployment of the task-mcp MCP server to Google Clou
 
 - ✅ Docker containerization
 - ✅ Cloud Run deployment configuration
-- ✅ mcp-auth integration
+- ✅ mcp-auth integration for multi-tenant support
 - ✅ Environment variable management
-- ✅ Service account setup
-- ✅ Automated deployment scripts
+- ✅ Automated deployment via Cloud Build
+- ✅ Health check endpoint
+- ✅ TypeScript with strict type checking
 
 ## Architecture
 
@@ -40,6 +41,30 @@ task-mcp-server handles the deployment of the task-mcp MCP server to Google Clou
         └─────────────┘
 ```
 
+## Prerequisites
+
+- Node.js 20+
+- Docker (for containerization)
+- Google Cloud account
+- Firebase project with Firestore
+- gcloud CLI (for deployment)
+
+## Installation
+
+```bash
+# Clone repository
+git clone https://github.com/prmichaelsen/task-mcp-server.git
+cd task-mcp-server
+
+# Install dependencies
+npm install
+
+# Copy environment template
+cp .env.example .env
+
+# Edit .env with your configuration
+```
+
 ## Environment Variables
 
 ```bash
@@ -50,30 +75,78 @@ FIREBASE_SERVICE_ACCOUNT_JSON={"type":"service_account",...}
 # Server Configuration
 NODE_ENV=production
 LOG_LEVEL=info
+PORT=8080
 
-# mcp-auth Configuration
-MCP_AUTH_ENABLED=true
-```
-
-## Deployment
-
-### Prerequisites
-
-- Google Cloud account
-- Firebase project with Firestore
-- Service account with Firestore permissions
-- Docker installed
-- gcloud CLI installed
-
-### Deploy to Cloud Run
-
-```bash
-./scripts/deploy.sh
+# mcp-auth Configuration (optional)
+PLATFORM_URL=https://agentbase.me
+PLATFORM_SERVICE_TOKEN=your-service-token
+CORS_ORIGIN=https://agentbase.me
 ```
 
 ## Development
 
-This project is deployment-only. For development of the MCP server itself, see [@prmichaelsen/task-mcp](https://github.com/prmichaelsen/task-mcp).
+```bash
+# Run in development mode with hot reload
+npm run dev
+
+# Type check
+npm run type-check
+
+# Build for production
+npm run build
+
+# Run production build
+npm start
+```
+
+## Deployment
+
+### Local Docker Testing
+
+```bash
+# Build Docker image
+docker build -t task-mcp-server .
+
+# Run container
+docker run -p 8080:8080 --env-file .env task-mcp-server
+
+# Test health check
+curl http://localhost:8080/mcp/health
+```
+
+### Deploy to Cloud Run
+
+```bash
+# Using Cloud Build (recommended)
+gcloud builds submit --config cloudbuild.yaml
+
+# Or deploy directly
+gcloud run deploy task-mcp-server \
+  --source . \
+  --region us-central1 \
+  --platform managed \
+  --allow-unauthenticated
+```
+
+## Project Structure
+
+```
+task-mcp-server/
+├── src/
+│   └── index.ts          # Main server entry point
+├── agent/                # ACP documentation
+│   ├── design/           # Design documents
+│   ├── milestones/       # Project milestones
+│   ├── tasks/            # Task breakdowns
+│   └── progress.yaml     # Progress tracking
+├── dist/                 # Compiled JavaScript
+├── Dockerfile            # Container configuration
+├── cloudbuild.yaml       # Cloud Build config
+├── package.json          # Project manifest
+├── tsconfig.json         # TypeScript config
+├── .env.example          # Environment template
+└── README.md             # This file
+```
 
 ## Documentation
 
@@ -81,8 +154,23 @@ See [`agent/`](agent/) directory for:
 - Design documents
 - Milestones and tasks
 - Progress tracking
-- Deployment patterns
+- Development patterns
+
+## Health Check
+
+The server provides a health check endpoint at `/mcp/health`:
+
+```bash
+curl http://localhost:8080/mcp/health
+# Response: {"status":"healthy"}
+```
 
 ## License
 
 MIT
+
+## Related Projects
+
+- [@prmichaelsen/task-mcp](https://github.com/prmichaelsen/task-mcp) - Core MCP server library
+- [@prmichaelsen/mcp-auth](https://github.com/prmichaelsen/mcp-auth) - Authentication wrapper
+- [remember-mcp-server](https://github.com/prmichaelsen/remember-mcp-server) - Similar deployment wrapper

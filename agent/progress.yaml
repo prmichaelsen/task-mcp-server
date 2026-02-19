@@ -4,8 +4,8 @@ project:
   name: task-mcp-server
   version: 0.1.0
   started: 2026-02-16
-  status: not_started
-  current_milestone: M1
+  status: in_progress
+  current_milestone: M3
   description: |
     Deployment wrapper for @prmichaelsen/task-mcp MCP server.
     Provides Docker configuration, Cloud Run setup, and deployment automation.
@@ -13,12 +13,12 @@ project:
 milestones:
   - id: M1
     name: Project Setup and Bootstrap
-    status: not_started
-    progress: 0
-    started: null
-    completed: null
+    status: completed
+    progress: 100
+    started: 2026-02-19
+    completed: 2026-02-19
     estimated_weeks: 0.1
-    tasks_completed: 0
+    tasks_completed: 5
     tasks_total: 5
     notes: |
       Initialize project structure, dependencies, and configuration.
@@ -26,12 +26,12 @@ milestones:
 
   - id: M2
     name: Server Implementation
-    status: not_started
-    progress: 0
-    started: null
-    completed: null
+    status: completed
+    progress: 100
+    started: 2026-02-19
+    completed: 2026-02-19
     estimated_weeks: 0.15
-    tasks_completed: 0
+    tasks_completed: 3
     tasks_total: 3
     notes: |
       Implement MCP server with mcp-auth wrapper and task-mcp integration.
@@ -39,12 +39,12 @@ milestones:
 
   - id: M3
     name: Deployment Configuration
-    status: not_started
-    progress: 0
-    started: null
-    completed: null
+    status: completed
+    progress: 100
+    started: 2026-02-19
+    completed: 2026-02-19
     estimated_weeks: 0.1
-    tasks_completed: 0
+    tasks_completed: 3
     tasks_total: 3
     notes: |
       Create Docker container and Cloud Build configuration.

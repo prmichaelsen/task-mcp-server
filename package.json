@@ -1,0 +1,32 @@
+{
+  "name": "@prmichaelsen/task-mcp-server",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Deployment wrapper for task-mcp MCP server with mcp-auth",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "multi-tenant",
+    "task-management",
+    "firestore"
+  ],
+  "author": "Patrick Michaelsen <prmichaelsen@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "@prmichaelsen/mcp-auth": "^7.0.3",
+    "@prmichaelsen/task-mcp": "^0.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.7.0",
+    "typescript": "^5.7.2"
+  }
+}
