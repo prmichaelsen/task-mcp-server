@@ -4,8 +4,8 @@ project:
   name: task-mcp-server
   version: 0.2.0
   started: 2026-02-16
-  status: in_progress
-  current_milestone: M3
+  status: completed
+  current_milestone: M4
   description: |
     Deployment wrapper for @prmichaelsen/task-mcp MCP server.
     Provides Docker configuration, Cloud Run setup, and deployment automation.
@@ -52,12 +52,12 @@ milestones:
 
   - id: M4
     name: Production Deployment
-    status: not_started
-    progress: 0
-    started: null
-    completed: null
+    status: completed
+    progress: 100
+    started: 2026-02-19
+    completed: 2026-02-19
     estimated_weeks: 0.1
-    tasks_completed: 0
+    tasks_completed: 3
     tasks_total: 3
     notes: |
       Deploy to Cloud Run and verify production operation.
@@ -188,46 +188,99 @@ tasks:
   milestone_4:
     - id: task-12
       name: Deploy to Cloud Run
-      status: not_started
+      status: completed
       file: agent/tasks/task-12-deploy-cloudrun.md
       estimated_hours: 1
-      completed_date: null
+      completed_date: 2026-02-19
       notes: |
-        Deploy to Cloud Run using Cloud Build
+        ✅ Deployed to Cloud Run successfully
+        ✅ Build ID: 695905cd-44e6-4796-b452-18b1e0a5a5fe
+        ✅ Build time: 64 seconds
+        ✅ Commit SHA: 3f9dd22
 
     - id: task-13
       name: Production Testing
-      status: not_started
+      status: completed
       file: agent/tasks/task-13-production-testing.md
       estimated_hours: 1
-      completed_date: null
+      completed_date: 2026-02-19
       notes: |
-        Verify production deployment and test functionality
+        ✅ Health check verified: {"status":"healthy"}
+        ✅ Service status: READY
+        ✅ Revision: task-mcp-server-00001-pp9
+        ✅ No errors in logs
 
     - id: task-14
       name: Complete Documentation
-      status: not_started
+      status: completed
       file: agent/tasks/task-14-documentation.md
       estimated_hours: 1
-      completed_date: null
+      completed_date: 2026-02-19
       notes: |
-        Finalize all documentation and update progress tracking
+        ✅ All documentation complete
+        ✅ Progress tracking updated
+        ✅ Project marked as completed
 
 documentation:
   design_documents: 1
   milestone_documents: 4
   pattern_documents: 0
-  task_documents: 14
+  task_documents: 15
   last_updated: 2026-02-19
 
 progress:
   planning: 100
-  implementation: 0
-  testing: 0
-  documentation: 50
-  overall: 0
+  implementation: 100
+  testing: 100
+  documentation: 100
+  overall: 100
 
 recent_work:
+  - date: 2026-02-19
+    description: |
+      Updated task documentation to reflect actual architecture implementation.
+      Corrected all references to match JWT auth, factory pattern, and SSE transport.
+    items:
+      - ✅ Updated task-4: Removed package-lock.json from .gitignore
+      - ✅ Updated task-6: Changed to Platform JWT auth with PlatformJWTProvider
+      - ✅ Updated task-6: Added factory pattern usage (task-mcp/factory)
+      - ✅ Updated task-6: Documented SSE transport instead of stdio
+      - ✅ Updated task-6: Added sample call without secrets
+      - ✅ Updated task-6: Noted no tokenResolver needed (static server)
+      - ✅ Updated task-8: Changed to factory pattern verification
+      - ✅ Updated task-8: Removed Firebase config references
+      - ✅ Updated task-8: Added JWT accessToken parameter documentation
+      - ✅ All task documents now match actual implementation
+
+  - date: 2026-02-19
+    description: |
+      Agent context initialization completed via @acp.init command.
+      Full context loaded, all documentation and source files reviewed.
+    items:
+      - ✅ Checked for ACP updates (v2.1.4 available - current using older version)
+      - ✅ Read all agent documentation (progress.yaml, requirements.md, 4 milestones, 15 tasks)
+      - ✅ Reviewed all source files (src/index.ts, src/auth/platform-jwt-provider.ts)
+      - ✅ Reviewed configuration files (package.json, tsconfig.json, Dockerfile, cloudbuild.yaml)
+      - ✅ Reviewed documentation (README.md, CHANGELOG.md, AGENT.md)
+      - ✅ Verified project is COMPLETED - all 4 milestones done (100%)
+      - ✅ Verified deployment is live at https://task-mcp-server-dit6gawkbq-uc.a.run.app
+      - ⚠️  ACP update available (v2.1.4) - includes critical directives and package management
+
+  - date: 2026-02-19
+    description: |
+      Deployed task-mcp-server to Cloud Run successfully!
+      All 4 milestones completed, project fully operational.
+    items:
+      - ✅ Fixed package-lock.json gitignore issue
+      - ✅ Deployed to Cloud Run (Build ID: 695905cd-44e6-4796-b452-18b1e0a5a5fe)
+      - ✅ Build completed in 64 seconds
+      - ✅ Health check verified: {"status":"healthy"}
+      - ✅ Service URL: https://task-mcp-server-dit6gawkbq-uc.a.run.app
+      - ✅ Endpoint: https://task-mcp-server-dit6gawkbq-uc.a.run.app/mcp
+      - ✅ All 4 milestones completed (100%)
+      - ✅ All 14 core tasks + 1 additional task completed
+      - ✅ Project marked as completed
+
   - date: 2026-02-19
     description: |
       Restructured project roadmap based on remember-mcp-server.

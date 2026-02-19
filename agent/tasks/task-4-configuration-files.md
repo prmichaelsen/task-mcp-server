@@ -20,7 +20,6 @@ Create `.gitignore`:
 ```gitignore
 # Dependencies
 node_modules/
-package-lock.json
 
 # Build output
 dist/
