@@ -24,7 +24,7 @@
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.4",
     "@prmichaelsen/mcp-auth": "^7.0.3",
-    "@prmichaelsen/task-mcp": "^1.1.0"
+    "@prmichaelsen/task-mcp": "^1.2.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
