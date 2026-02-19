@@ -172,6 +172,19 @@ tasks:
       notes: |
         📋 Ready for local Docker testing
 
+  additional_tasks:
+    - id: task-15
+      name: Add Upload Secrets Utility Script
+      status: completed
+      file: agent/tasks/task-15-upload-secrets-utility.md
+      estimated_hours: 0.5
+      completed_date: 2026-02-19
+      notes: |
+        ✅ Added scripts/upload-secrets.ts utility
+        ✅ Added scripts/README.md documentation
+        ✅ Added npm script: script:upload-secrets
+        ✅ Simplifies secret management for Cloud Run
+
   milestone_4:
     - id: task-12
       name: Deploy to Cloud Run
