@@ -35,8 +35,8 @@ steps:
       - '--memory=512Mi'
       - '--cpu=1'
       - '--timeout=60s'
-      - '--set-env-vars=NODE_ENV=production'
-      - '--update-secrets=FIREBASE_PROJECT_ID=task-firebase-project-id:latest,FIREBASE_SERVICE_ACCOUNT_JSON=task-firebase-service-account-json:latest,TASK_MCP_USER_ID=task-mcp-user-id:latest,TASK_MCP_ACCESS_TOKEN=task-mcp-access-token:latest'
+      - '--set-env-vars=NODE_ENV=production,PLATFORM_URL=https://agentbase.me,CORS_ORIGIN=https://agentbase.me'
+      - '--update-secrets=FIREBASE_PROJECT_ID=task-firebase-project-id:latest,FIREBASE_SERVICE_ACCOUNT_JSON=task-firebase-service-account-json:latest,PLATFORM_SERVICE_TOKEN=task-platform-service-token:latest'
 
 images:
   - 'gcr.io/$PROJECT_ID/task-mcp-server:$COMMIT_SHA'
